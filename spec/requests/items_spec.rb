@@ -12,7 +12,7 @@ RSpec.describe 'Items API' do
 
   # Test suite for GET /bucketlists/:bucketlist_id/items
   describe 'GET /bucketlists/:bucketlist_id/items' do
-    before { get "/bucketlists/#{bucketlist_id}/items", headers: headers }
+    before { get "/v1/bucketlists/#{bucketlist_id}/items", headers: headers }
 
     context 'when bucketlist exists' do
       it 'returns status code 200' do
@@ -39,7 +39,7 @@ RSpec.describe 'Items API' do
 
   # Test suite for GET /bucketlists/:bucketlist_id/items/:id
   describe 'GET /bucketlists/:bucketlist_id/items/:id' do
-    before { get "/bucketlists/#{bucketlist_id}/items/#{id}", headers: headers }
+    before { get "/v1/bucketlists/#{bucketlist_id}/items/#{id}", headers: headers }
 
     context 'when bucketlist item exists' do
       it 'returns status code 200' do
@@ -66,10 +66,10 @@ RSpec.describe 'Items API' do
 
   # Test suite for PUT /bucketlists/:bucketlist_id/items
   describe 'POST /bucketlists/:bucketlist_id/items' do
-    let(:valid_attributes) { { name: 'Visit Narnia', done: false }.to_json }
+    let(:valid_attributes) { { name: 'Visit Narnia', done: false } }
 
     context 'when request attributes are valid' do
-      before { post "/bucketlists/#{bucketlist_id}/items", params: valid_attributes, headers: headers }
+      before { post "/v1/bucketlists/#{bucketlist_id}/items", params: valid_attributes, headers: headers }
 
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
@@ -77,7 +77,7 @@ RSpec.describe 'Items API' do
     end
 
     context 'when an invalid request' do
-      before { post "/bucketlists/#{bucketlist_id}/items", params: {}, headers: headers }
+      before { post "/v1/bucketlists/#{bucketlist_id}/items", params: {}, headers: headers }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -91,9 +91,9 @@ RSpec.describe 'Items API' do
 
   # Test suite for PUT /bucketlists/:bucketlist_id/items/:id
   describe 'PUT /bucketlists/:bucketlist_id/items/:id' do
-    let(:valid_attributes) { { name: 'Mozart' }.to_json }
+    let(:valid_attributes) { { name: 'Mozart' } }
 
-    before { put "/bucketlists/#{bucketlist_id}/items/#{id}", params: valid_attributes, headers: headers }
+    before { put "/v1/bucketlists/#{bucketlist_id}/items/#{id}", params: valid_attributes, headers: headers }
 
     context 'when item exists' do
       it 'returns status code 204' do
@@ -101,7 +101,7 @@ RSpec.describe 'Items API' do
       end
 
       it 'updates the item' do
-        updated_item = Item.find(id)
+        updated_item = Item.find(id)       
         expect(updated_item.name).to match(/Mozart/)
       end
     end
@@ -121,7 +121,7 @@ RSpec.describe 'Items API' do
 
   # Test suite for DELETE /bucketlists/:id
   describe 'DELETE /bucketlists/:id' do
-    before { delete "/bucketlists/#{bucketlist_id}/items/#{id}", headers: headers }
+    before { delete "/v1/bucketlists/#{bucketlist_id}/items/#{id}", headers: headers }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)

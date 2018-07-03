@@ -1,0 +1,3 @@
+module AuthSpecHelper
+  
+end
