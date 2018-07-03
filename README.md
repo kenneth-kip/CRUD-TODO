@@ -1,6 +1,6 @@
 
-[![Build Status](https://travis-ci.org/andela-kipyegon/Ruby-on-Rails---bucketlists.svg?branch=develop)](https://travis-ci.org/andela-kipyegon/Ruby-on-Rails---bucketlists)
-[![Coverage Status](https://coveralls.io/repos/github/andela-kipyegon/Ruby-on-Rails---bucketlists/badge.svg?branch=develop)](https://coveralls.io/github/andela-kipyegon/Ruby-on-Rails---bucketlists?branch=develop)
+[![Build Status](https://travis-ci.org/kenneth-kip/CRUD-TODO.svg?branch=develop)](https://travis-ci.org/kenneth-kip/CRUD-TODO)
+[![Coverage Status](https://coveralls.io/repos/github/kenneth-kip/CRUD-TODO/badge.svg?branch=develop)](https://coveralls.io/github/kenneth-kip/CRUD-TODO?branch=develop)
 # README
 
 This README would normally document whatever steps are necessary to get the
