@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - "2.4.1"
+env:
+  - SECRET_KEY
 script:
   - bundle install 
   - bundle exec rails db:create 

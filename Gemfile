@@ -25,6 +25,8 @@ gem 'jwt'
 
 gem 'faker'
 
+gem 'coveralls'
+
 gem 'will_paginate', '~> 3.1.0'
 
 gem 'active_model_serializers', '~> 0.10.0'
@@ -32,6 +34,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'coveralls', require: false
 
 gem 'devise_token_auth'
+
+gem 'simplecov'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
